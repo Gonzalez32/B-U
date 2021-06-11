@@ -1,4 +1,4 @@
-const BlogList = ({ blogs, title }) => {
+const BlogList = ({ blogs, title, handleDelete }) => {
 
     // Method #2 we can use props within the arguement above
 
@@ -8,8 +8,6 @@ const BlogList = ({ blogs, title }) => {
 
     // log out the data
     // console.log(props,blogs);
-   
-    
     
     return (
         <div className="blog-list">
@@ -19,6 +17,7 @@ const BlogList = ({ blogs, title }) => {
                 <div className="blog-preview" key={x.id}>
                     <h2>{ x.title}</h2>
                     <p>Written by: { x.author }</p>
+                    <button onClick={() => handleDelete(x.id)} >Delete Blog</button>
                 </div>
             ))}
         </div>
