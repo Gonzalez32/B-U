@@ -6,7 +6,7 @@ const Home = () => {
     const [blogs, setBlogs] = useState([
         {title: 'My new website', body: 'Hokeki', author: 'bob', id:1 },
         {title: 'my life is up and down', body: 'Hokeki', author: 'juan', id:2 },
-        {title: 'life is short', body: 'Hokeki', author: 'batman', id:3 },
+        {title: 'life is short', body: 'Hokeki', author: 'bob', id:3 },
     ])
 
     return ( 
@@ -18,7 +18,8 @@ const Home = () => {
                     <p>Written by: { x.author }</p>
                 </div>
             ))} */}
-            <BlogList blogs={blogs} title="All Blogs" />
+            <BlogList blogs={blogs} title="All Blogs" /><br /><br />
+            <BlogList blogs={blogs.filter((blog) => blog.author === 'bob')} title="Bob Blogs" />
         </div>
      );
 }
